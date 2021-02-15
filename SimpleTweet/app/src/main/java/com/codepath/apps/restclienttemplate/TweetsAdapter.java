@@ -46,6 +46,18 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     }
     // For each row, inflate the layout
 
+    // clean all elements of the recycler
+    public void clear(){
+        tweets.clear();
+        notifyDataSetChanged();
+    }
+
+    // add a list of items
+    public void addAll(List<Tweet> tweetList){
+        tweets.addAll(tweetList);
+        notifyDataSetChanged();
+    }
+
     // Define a viewholder
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView ivProfileImage;
