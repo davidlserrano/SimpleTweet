@@ -34,7 +34,7 @@ public class Tweet {
 
     @Ignore
     public User user;
-    
+
     // empty constructor required by Parceler Library
     public Tweet() {}
 

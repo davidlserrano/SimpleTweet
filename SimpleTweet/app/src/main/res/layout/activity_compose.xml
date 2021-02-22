@@ -6,26 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".ComposeActivity">
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/etCompose"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:hint="What's happening?"
-        android:lines="5"
-        android:minLines="5"
-        android:textColor="#000000" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCompose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="What's happening?"
+            android:minLines="3"
+            android:textColor="#000000"
+            android:textColorHighlight="#9DA9AE"
+            android:textColorLink="#03A9F4"
+            app:counterEnabled="true"
+            app:counterMaxLength="140" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etCompose"
+        android:layout_alignBottom="@+id/textInputLayout"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="-54dp"
         android:text="@string/tweet" />
+
+    <TextView
+        android:id="@+id/tvCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textInputLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        tools:text="Counter" />
 
 </RelativeLayout>
